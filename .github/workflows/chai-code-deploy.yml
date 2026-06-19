@@ -46,14 +46,4 @@ jobs:
               git pull
               npm install
               pm2 restart 0
-              # # Kill the existing docker container
-              #   sudo docker rm -f node-image || true
-
-              # # Again pull the fresh image from hub
-              #   sudo docker pull gaurangkanbur/node-image
-
-              # # Run container
-              #   sudo docker run -d --name node-image --restart unless-stopped -p 80:8000 gaurangkanbur/node-image
-
-              # # Clean up old/unused images
-              #   sudo docker image prune -f
+             
