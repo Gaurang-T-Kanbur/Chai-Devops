@@ -27,9 +27,9 @@ jobs:
           uses: docker/setup-buildx-action@v4
 
         - name: Docker Build and Push
-          run: 
-            docker build -t gaurangkanbur/node-image .
-            docker push gaurangkanbur/node-image
+          run: |
+           docker build -t gaurangkanbur/node-image:latest .
+            docker push gaurangkanbur/node-image:latest
 
 
 
