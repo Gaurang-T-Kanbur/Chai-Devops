@@ -40,15 +40,17 @@ jobs:
             username: ubuntu
             key: ${{ secrets.PRIVATE_KEY }}
             script: |
-               sudo docker rm -f node-image || true
+             # CD /home/ubuntu/Chai-Devops
+             cd /home/ubuntu/Chai-Devops
 
-               # Again pull the fresh image from hub
-                 sudo docker pull gaurangkanbur/node-image
+             # git pull
+             git pull origin master
 
-               # Run container
-                sudo docker run -d --name node-image --restart unless-stopped -p 80:8000 gaurangkanbur/node-image
+             # make sure to pull fresh copy of gaurangkanbur/node-image:latest
+             sudo docker compose pull
 
-               # Clean up old/unused images
-                 sudo docker image prune -f
+             # docker compose up -d
+             sudo docker compose up -d
 
-             
+             # Clean up old/unused images
+             sudo docker image prune -f
