@@ -1,6 +1,6 @@
 210.79.128.104 {
     tls internal
- }
+ 
     handle {
         reverse_proxy nodejs-server:8000 {
             header_up Host {host}
@@ -10,4 +10,6 @@
         }
         
     }
+
+}
     
