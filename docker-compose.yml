@@ -1,12 +1,14 @@
 services:
   nodejs-server:
     image: gaurangkanbur/node-image
+    restart: unless-stopped
     deploy:
       replicas: 5
     networks:
       - chaicode-internal
   caddy:
     image: caddy:latest
+    restart: unless-stopped
     ports:
       - '80:80'
     volumes: 
